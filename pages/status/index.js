@@ -9,7 +9,6 @@ async function fetchAPI(key) {
 export default function StatusPage() {
   return (
     <>
-      <h1>Status</h1>
       <UpdatedAt />
       <DatabaseStatus />
     </>
@@ -27,7 +26,12 @@ function UpdatedAt() {
     updatedAtText = new Date(data.updated_at).toLocaleString("pt-BR");
   }
 
-  return <div>Última atualização: {updatedAtText}</div>;
+  return (
+    <>
+      <h1>Status</h1>
+      <div>Última atualização: {updatedAtText}</div>
+    </>
+  );
 }
 
 function DatabaseStatus() {
@@ -53,7 +57,7 @@ function DatabaseStatus() {
 
   return (
     <>
-      <h2>Database</h2>
+      <h1>Database</h1>
       <div>{databaseStatusInformation}</div>
     </>
   );
